@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="it-emp1" class="model.Employee">
+        <constructor-arg value="Andrey"/>
+        <constructor-arg ref="it-pos-it"/>
+        <constructor-arg ref="it-emp1-sal"/>
+    </bean>
+
+    <bean id="it-pos-it" class="model.Position">
+        <constructor-arg value="IT"/>
+    </bean>
+
+    <bean id="it-emp1-sal" class="model.Salary">
+        <constructor-arg value="200000.00"/>
+    </bean>
+
+    <bean id="it-emp2" class="model.Employee">
+        <constructor-arg value="Irina"/>
+        <constructor-arg ref="it-pos-manager"/>
+        <constructor-arg ref="it-emp2-sal"/>
+    </bean>
+
+    <bean id="it-pos-manager" class="model.Position">
+        <constructor-arg value="Manager"/>
+    </bean>
+
+    <bean id="it-emp2-sal" class="model.Salary">
+        <constructor-arg value="150000.00"/>
+    </bean>
+
+    <bean id="company" class="model.Company">
+        <constructor-arg value="IT-Co"/>
+        <constructor-arg ref="position-list"/>
+        <constructor-arg ref="employee-list"/>
+        <constructor-arg ref="employeeService"/>
+        <constructor-arg ref="positionService"/>
+        <constructor-arg ref="salaryService"/>
+    </bean>
+
+    <bean id="employeeService" class="services.EmployeeService"/>
+    <bean id="positionService" class="services.PositionService"/>
+    <bean id="salaryService" class="services.SalaryService"/>
+
+    <bean id="employee-list" class="java.util.ArrayList">
+        <constructor-arg>
+            <list>
+                <ref bean="it-emp1" />
+                <ref bean="it-emp2" />
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <bean id="position-list" class="java.util.ArrayList">
+        <constructor-arg>
+            <list>
+                <ref bean="it-pos-it" />
+                <ref bean="it-pos-manager" />
+            </list>
+        </constructor-arg>
+    </bean>
+</beans>
