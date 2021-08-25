@@ -3,16 +3,7 @@ package services;
 import model.Salary;
 
 public class SalaryService {
-
-    public void issueBonus(Salary salary, double bonus) {
-
-    }
-
-    public void dollarExchangeRate(Salary salary, double curse) {
-
-    }
-
-    public void recalculationInflation(Salary salary, double inflation) {
-
+    public double issueBonus(Salary salary, double bonus, double curse, double inflation) {
+        return salary.getSalary() * curse * inflation + bonus;
     }
 }

@@ -6,5 +6,6 @@ import lombok.*;
 @AllArgsConstructor
 @Data
 public class Position {
-    private String position;
+    private String name;
+    private Salary salary;
 }

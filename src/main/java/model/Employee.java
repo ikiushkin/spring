@@ -9,5 +9,4 @@ import lombok.*;
 public class Employee {
     private String name;
     private Position position;
-    private Salary salary;
 }

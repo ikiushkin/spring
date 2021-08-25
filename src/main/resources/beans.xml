@@ -6,28 +6,33 @@
     <bean id="it-emp1" class="model.Employee">
         <constructor-arg value="Andrey"/>
         <constructor-arg ref="it-pos-it"/>
-        <constructor-arg ref="it-emp1-sal"/>
-    </bean>
-
-    <bean id="it-pos-it" class="model.Position">
-        <constructor-arg value="IT"/>
-    </bean>
-
-    <bean id="it-emp1-sal" class="model.Salary">
-        <constructor-arg value="200000.00"/>
     </bean>
 
     <bean id="it-emp2" class="model.Employee">
         <constructor-arg value="Irina"/>
         <constructor-arg ref="it-pos-manager"/>
-        <constructor-arg ref="it-emp2-sal"/>
+    </bean>
+
+    <bean id="it-emp3" class="model.Employee">
+        <constructor-arg value="Maxim"/>
+        <constructor-arg ref="it-pos-it"/>
+    </bean>
+
+    <bean id="it-pos-it" class="model.Position">
+        <constructor-arg value="IT"/>
+        <constructor-arg ref="it-sal"/>
+    </bean>
+
+    <bean id="it-sal" class="model.Salary">
+        <constructor-arg value="200000.00"/>
     </bean>
 
     <bean id="it-pos-manager" class="model.Position">
         <constructor-arg value="Manager"/>
+        <constructor-arg ref="manager-sal"/>
     </bean>
 
-    <bean id="it-emp2-sal" class="model.Salary">
+    <bean id="manager-sal" class="model.Salary">
         <constructor-arg value="150000.00"/>
     </bean>
 
@@ -40,8 +45,16 @@
         <constructor-arg ref="salaryService"/>
     </bean>
 
+    <bean id="util" class="services.Util">
+        <constructor-arg ref="employeeService"/>
+        <constructor-arg ref="positionService"/>
+        <constructor-arg ref="salaryService"/>
+    </bean>
+
     <bean id="employeeService" class="services.EmployeeService"/>
-    <bean id="positionService" class="services.PositionService"/>
+    <bean id="positionService" class="services.PositionService">
+        <constructor-arg value="IT-Co"/>
+    </bean>
     <bean id="salaryService" class="services.SalaryService"/>
 
     <bean id="employee-list" class="java.util.ArrayList">
@@ -61,4 +74,5 @@
             </list>
         </constructor-arg>
     </bean>
+
 </beans>
