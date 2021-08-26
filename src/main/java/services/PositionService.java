@@ -3,7 +3,9 @@ package services;
 import lombok.*;
 import model.Company;
 import model.Position;
+import org.springframework.stereotype.Service;
 
+@Service
 @AllArgsConstructor
 @NoArgsConstructor
 @Data

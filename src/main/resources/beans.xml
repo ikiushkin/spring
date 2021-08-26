@@ -5,16 +5,19 @@
 
     <bean id="it-emp1" class="model.Employee">
         <constructor-arg value="Andrey"/>
+        <constructor-arg value="28"/>
         <constructor-arg ref="it-pos-it"/>
     </bean>
 
     <bean id="it-emp2" class="model.Employee">
         <constructor-arg value="Irina"/>
+        <constructor-arg value="31"/>
         <constructor-arg ref="it-pos-manager"/>
     </bean>
 
     <bean id="it-emp3" class="model.Employee">
         <constructor-arg value="Maxim"/>
+        <constructor-arg value="42"/>
         <constructor-arg ref="it-pos-it"/>
     </bean>
 
@@ -24,7 +27,7 @@
     </bean>
 
     <bean id="it-sal" class="model.Salary">
-        <constructor-arg value="200000.00"/>
+        <constructor-arg value="#{50000.0 * 3}"/>
     </bean>
 
     <bean id="it-pos-manager" class="model.Position">
@@ -33,16 +36,14 @@
     </bean>
 
     <bean id="manager-sal" class="model.Salary">
-        <constructor-arg value="150000.00"/>
+        <constructor-arg value="#{ T(java.lang.Math).random() * 200000.0 + 100000.0}"/>
     </bean>
 
     <bean id="company" class="model.Company">
         <constructor-arg value="IT-Co"/>
         <constructor-arg ref="position-list"/>
         <constructor-arg ref="employee-list"/>
-        <constructor-arg ref="employeeService"/>
-        <constructor-arg ref="positionService"/>
-        <constructor-arg ref="salaryService"/>
+        <constructor-arg ref="util"/>
     </bean>
 
     <bean id="util" class="services.Util">
