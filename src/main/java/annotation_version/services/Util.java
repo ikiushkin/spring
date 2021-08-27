@@ -1,4 +1,4 @@
-package services;
+package annotation_version.services;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,12 +14,9 @@ public class Util {
 
     private PositionService positionService;
 
-    private SalaryService salaryService;
-
     @Autowired
-    public Util(EmployeeService employeeService, PositionService positionService, SalaryService salaryService) {
+    public Util(EmployeeService employeeService, PositionService positionService) {
         this.employeeService = employeeService;
         this.positionService = positionService;
-        this.salaryService = salaryService;
     }
 }

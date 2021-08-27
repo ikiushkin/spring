@@ -1,10 +1,10 @@
-package services;
+package annotation_version.services;
 
-import model.Employee;
-import model.Position;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
+import xml_version.model.Employee;
+import xml_version.model.Position;
 
-@Service
+@Component
 public class EmployeeService {
 
     public void hireAnEmployee(Employee employee, Position position) {

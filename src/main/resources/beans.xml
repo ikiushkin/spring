@@ -1,62 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+       http://www.springframework.org/schema/util
+       http://www.springframework.org/schema/util/spring-util-4.3.xsd">
 
-    <bean id="it-emp1" class="model.Employee">
+    <bean id="it-emp1" class="xml_version.model.Employee">
         <constructor-arg value="Andrey"/>
         <constructor-arg value="28"/>
         <constructor-arg ref="it-pos-it"/>
     </bean>
 
-    <bean id="it-emp2" class="model.Employee">
+    <bean id="it-emp2" class="xml_version.model.Employee">
         <constructor-arg value="Irina"/>
         <constructor-arg value="31"/>
         <constructor-arg ref="it-pos-manager"/>
     </bean>
 
-    <bean id="it-emp3" class="model.Employee">
+    <bean id="it-emp3" class="xml_version.model.Employee">
         <constructor-arg value="Maxim"/>
         <constructor-arg value="42"/>
         <constructor-arg ref="it-pos-it"/>
     </bean>
 
-    <bean id="it-pos-it" class="model.Position">
+    <bean id="it-pos-it" class="xml_version.model.Position">
         <constructor-arg value="IT"/>
         <constructor-arg ref="it-sal"/>
     </bean>
 
-    <bean id="it-sal" class="model.Salary">
+    <bean id="it-sal" class="xml_version.model.Salary">
         <constructor-arg value="#{50000.0 * 3}"/>
     </bean>
 
-    <bean id="it-pos-manager" class="model.Position">
+    <bean id="it-pos-manager" class="xml_version.model.Position">
         <constructor-arg value="Manager"/>
         <constructor-arg ref="manager-sal"/>
     </bean>
 
-    <bean id="manager-sal" class="model.Salary">
+    <bean id="manager-sal" class="xml_version.model.Salary">
         <constructor-arg value="#{ T(java.lang.Math).random() * 200000.0 + 100000.0}"/>
     </bean>
 
-    <bean id="company" class="model.Company">
+    <bean id="company" class="xml_version.model.Company" scope="prototype">
         <constructor-arg value="IT-Co"/>
         <constructor-arg ref="position-list"/>
         <constructor-arg ref="employee-list"/>
         <constructor-arg ref="util"/>
     </bean>
 
-    <bean id="util" class="services.Util">
+    <bean id="util" class="xml_version.services.Util">
         <constructor-arg ref="employeeService"/>
         <constructor-arg ref="positionService"/>
         <constructor-arg ref="salaryService"/>
     </bean>
 
-    <bean id="employeeService" class="services.EmployeeService"/>
-    <bean id="positionService" class="services.PositionService">
+    <bean id="employeeService" class="xml_version.services.EmployeeService" lazy-init="true"/>
+    <bean id="positionService" class="xml_version.services.PositionService" lazy-init="true">
         <constructor-arg value="IT-Co"/>
     </bean>
-    <bean id="salaryService" class="services.SalaryService"/>
+    <bean id="salaryService" class="xml_version.services.SalaryService" lazy-init="true"/>
 
     <bean id="employee-list" class="java.util.ArrayList">
         <constructor-arg>

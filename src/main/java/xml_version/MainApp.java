@@ -1,14 +1,15 @@
-import model.Company;
-import model.Employee;
-import model.Position;
-import model.Salary;
+package xml_version;
+
+import xml_version.model.Company;
+import xml_version.model.Employee;
+import xml_version.model.Position;
+import xml_version.model.Salary;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import services.Util;
+import xml_version.services.Util;
 
-import java.sql.Time;
 import java.util.List;
 
 public class MainApp {

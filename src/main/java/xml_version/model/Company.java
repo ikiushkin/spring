@@ -1,16 +1,13 @@
-package model;
+package xml_version.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-import services.Util;
+import xml_version.services.Util;
 
 import javax.validation.constraints.*;
 import java.util.List;
-
-@Component
 @NoArgsConstructor
 @AllArgsConstructor
 @Data

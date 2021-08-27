@@ -1,4 +1,4 @@
-package model;
+package xml_version.model;
 
 import lombok.*;
 
