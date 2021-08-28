@@ -1,12 +1,12 @@
-package annotation_version.services;
+package core1.annotation_version.services;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 import org.springframework.stereotype.Component;
-import xml_version.model.Company;
-import xml_version.model.Position;
+import core1.xml_version.model.Company;
+import core1.xml_version.model.Position;
 
 @Component
 @AllArgsConstructor

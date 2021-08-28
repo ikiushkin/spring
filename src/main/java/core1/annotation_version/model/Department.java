@@ -1,4 +1,4 @@
-package annotation_version.model;
+package core1.annotation_version.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 @AllArgsConstructor
 @Data
 @ToString
-public class Employee {
+public class Department {
     private String name;
-    private Department department;
+    private double salary;
 }

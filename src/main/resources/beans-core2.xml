@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+       http://www.springframework.org/schema/util
+       http://www.springframework.org/schema/util/spring-util-4.3.xsd">
+
+    <bean id="a" class="core2.task_1.model.A">
+        <property name="number" value="#{ T (java.lang.Math).random() * 10 + 100}"/>
+    </bean>
+
+    <bean id="b" class="core2.task_1.model.B">
+        <constructor-arg name="a" ref="a"/>
+    </bean>
+
+    <bean id="c" class="core2.task_1.model.C" scope="singleton"/>
+
+    <bean id="d" class="core2.task_1.model.D" scope="prototype" autowire="byName"/>
+
+    <bean id="e" class="core2.task_1.model.E">
+        <replaced-method name="printClassName" replacer="f">
+            <arg-type>java.lang.String</arg-type>
+        </replaced-method>
+    </bean>
+
+    <bean id="f" class="core2.task_1.model.F" init-method="init">
+        <constructor-arg name="name" value="F"/>
+    </bean>
+</beans>

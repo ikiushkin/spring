@@ -1,11 +1,11 @@
-package annotation_version;
+package core1.annotation_version;
 
-import annotation_version.model.Company;
-import annotation_version.model.Department;
-import annotation_version.model.Employee;
-import annotation_version.services.EmployeeService;
-import annotation_version.services.PositionService;
-import annotation_version.services.Util;
+import core1.annotation_version.model.Company;
+import core1.annotation_version.model.Department;
+import core1.annotation_version.model.Employee;
+import core1.annotation_version.services.EmployeeService;
+import core1.annotation_version.services.PositionService;
+import core1.annotation_version.services.Util;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;

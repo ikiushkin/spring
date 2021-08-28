@@ -1,7 +1,7 @@
-package xml_version.services;
+package core1.xml_version.services;
 
-import xml_version.model.Employee;
-import xml_version.model.Position;
+import core1.xml_version.model.Employee;
+import core1.xml_version.model.Position;
 
 public class EmployeeService {
 

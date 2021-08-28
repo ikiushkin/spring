@@ -1,10 +1,10 @@
-package xml_version.model;
+package core1.xml_version.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import xml_version.services.Util;
+import core1.xml_version.services.Util;
 
 import javax.validation.constraints.*;
 import java.util.List;

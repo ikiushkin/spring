@@ -1,8 +1,8 @@
-package xml_version.services;
+package core1.xml_version.services;
 
 import lombok.*;
-import xml_version.model.Company;
-import xml_version.model.Position;
+import core1.xml_version.model.Company;
+import core1.xml_version.model.Position;
 
 @AllArgsConstructor
 @NoArgsConstructor

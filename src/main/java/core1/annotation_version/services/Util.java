@@ -1,9 +1,11 @@
-package xml_version.services;
+package core1.annotation_version.services;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 @NoArgsConstructor
 @Data
 public class Util {
@@ -12,11 +14,9 @@ public class Util {
 
     private PositionService positionService;
 
-    private SalaryService salaryService;
-
-    public Util(EmployeeService employeeService, PositionService positionService, SalaryService salaryService) {
+    @Autowired
+    public Util(EmployeeService employeeService, PositionService positionService) {
         this.employeeService = employeeService;
         this.positionService = positionService;
-        this.salaryService = salaryService;
     }
 }

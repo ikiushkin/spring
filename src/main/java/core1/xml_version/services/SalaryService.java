@@ -1,6 +1,6 @@
-package xml_version.services;
+package core1.xml_version.services;
 
-import xml_version.model.Salary;
+import core1.xml_version.model.Salary;
 
 public class SalaryService {
     public double issueBonus(Salary salary, double bonus, double curse, double inflation) {

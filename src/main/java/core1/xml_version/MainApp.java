@@ -1,20 +1,20 @@
-package xml_version;
+package core1.xml_version;
 
-import xml_version.model.Company;
-import xml_version.model.Employee;
-import xml_version.model.Position;
-import xml_version.model.Salary;
+import core1.xml_version.model.Company;
+import core1.xml_version.model.Employee;
+import core1.xml_version.model.Position;
+import core1.xml_version.model.Salary;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import xml_version.services.Util;
+import core1.xml_version.services.Util;
 
 import java.util.List;
 
 public class MainApp {
     public static void main(String[] args) {
-        ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("beans-core1.xml");
 
         Logger log = LogManager.getLogger();
 

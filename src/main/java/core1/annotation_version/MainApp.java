@@ -1,6 +1,6 @@
-package annotation_version;
+package core1.annotation_version;
 
-import annotation_version.model.Company;
+import core1.annotation_version.model.Company;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
